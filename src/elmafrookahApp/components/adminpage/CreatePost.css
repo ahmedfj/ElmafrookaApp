@@ -1,0 +1,52 @@
+.create-container {
+  margin-top: 20px;
+  border-radius: 11px;
+}
+.info-data {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-control {
+  text-align: right;
+}
+.create-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  color: rgb(61, 127, 179);
+}
+.create-container select {
+  width: 95%;
+  height: 35px;
+}
+.create-container label {
+  font-size: 20px;
+}
+input,
+textarea {
+  direction: rtl;
+ 
+
+}
+.input-cont {
+  margin-top: 20px;
+}
+.custom-file {
+  width: 50%;
+}
+.imginput {
+  text-align: start;
+  color: black;
+}
+.backlink {
+  font-size: 20px;
+}
+.crBtn {
+  position: relative;
+  top: 36px;
+}

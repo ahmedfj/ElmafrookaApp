@@ -1,0 +1,38 @@
+
+.form-search input {
+    border: 1px solid #dedede;
+    width: 20em;
+    border-radius: 0 10px 10px 0;
+    outline: none;
+    text-align: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 26.4px;
+  }
+  .searchForm {
+    width: 100%;
+    padding: 10px;
+  }
+  .form-search {
+    
+    height: 26px;
+  
+    button {
+      border-radius: 10px 0 0 10px;
+      border: none;
+      background-color: rgb(61, 127, 179);
+      width: 46px;
+  
+      img {
+        width: 50%;
+      }
+    }
+    button:hover {
+      background-color: rgb(37, 87, 139);
+    }
+  }
+  .form-search {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }

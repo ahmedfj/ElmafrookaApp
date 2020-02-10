@@ -1,0 +1,42 @@
+import React from "react";
+import "./Footer.css";
+
+import twitterIcon from "../images/social-media/twitter.png";
+import instIcon from "../images/social-media/inst.png";
+import titleIcon from "../images/logo/logo-title.png";
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footerBody">
+        <div className="footer-title">
+          <h3>الـمفــــروكـــة</h3>
+          <p>
+          مبادرة غير ربحية لنشر ثقافة السينما وإثراء المحتوى العربي
+          </p>
+        </div>
+        <div className="footer-contact">
+          <p>تواصلوا معنا على</p>
+          <p className="contac-email">ElMafrooka@redseafilmfest.com</p>
+        </div>
+        <div className="socialMedia">
+          <a href="https://twitter.com/elmafrooka">
+            <img src={twitterIcon} alt="twitter" />
+          </a>
+          <a href="https://www.instagram.com/elmafrooka">
+            <img src={instIcon} alt="instgram" />
+          </a>
+        </div>
+
+        {/* <p className="copyright">Copyright © 2019, Elmafrookah</p> */}
+      </div>
+
+      <div className="logo-title">
+        <p>Powered by</p>
+        <img src={titleIcon} alt="title" />
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

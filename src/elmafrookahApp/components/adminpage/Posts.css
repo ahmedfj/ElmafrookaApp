@@ -1,0 +1,24 @@
+.card {
+  width: 35%;
+}
+
+.newsposts-cont {
+  margin-top: 85px;
+  /* background-color: rgba(37, 86, 139, 0.756); */
+  border-radius: 5px;
+  color: rgb(61, 127, 179);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: none;
+  border: none;
+  margin-top: 30px;
+}
+
+.newsposts-cont button {
+  margin-right: 20px;
+}

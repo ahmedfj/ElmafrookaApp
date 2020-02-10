@@ -1,0 +1,10 @@
+.ratingstars{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+
+.star{
+    width: 17px;
+    height: 100%;
+}

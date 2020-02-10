@@ -1,0 +1,20 @@
+.in-cont{
+    background-color: rgba(37, 86, 139, 0.756);
+    color: rgb(255, 255, 255);
+    width: 400px;
+    text-align: center;
+    margin-left: 30%;
+    border-radius: 5px;
+    box-shadow: 0 0 7px;
+
+}
+
+.auth-form{
+    padding: 20px;
+    text-align: right;
+}
+.btn{
+    margin-right: 150px;
+
+
+}

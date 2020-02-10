@@ -1,0 +1,54 @@
+#adminhomepage {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.div-row {
+  text-align: center;
+}
+.div-row p {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.allitems-cont {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  width: 79%;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+.allitems-cont a {
+  color: rgb(61, 127, 179);
+  text-decoration: none;
+}
+.side-menu {
+  /* background-color: rgba(37, 86, 139, 0.756); */
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 16%;
+  border-radius: 10px;
+  margin-top: 50px;
+  text-align: right;
+}
+
+.side-menu a {
+  margin-bottom: 20px;
+  width: 115px;
+  border-radius: 7px;
+}
+.side-menu a:hover {
+  text-decoration: none;
+}
+
+.side-menu img {
+  width: 16%;
+  margin-left: 4px;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,45 @@
+.editinfo {
+  text-align: center;
+  color: rgb(61, 127, 179);
+
+  margin-top: 20px;
+}
+.editinfo-cont {
+  border-radius: 5px;
+}
+.editinfo textarea {
+  resize: none;
+  height: 11em;
+  width: 44em;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px;
+  direction: rtl;
+}
+
+.editinfo input {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px;
+  direction: rtl;
+}
+.editinfo select {
+  width: 100%;
+}
+.top-info-data,
+.bottom-info-data {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0;
+}
+.input-cont {
+  margin-left: 20px;
+  width: max-content;
+ 
+}
+textarea{
+  text-align: justify;
+ }

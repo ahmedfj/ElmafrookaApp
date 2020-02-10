@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Brando Arabic";
+  src: url(/public/fonts/Brando-english-Bold.otf) format("otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer {
+  border-top: 1px solid rgb(196, 196, 196);
+  color: rgb(0, 55, 98);
+  text-align: center;
+  padding: 20px;
+  font-family: "Brando Arabic";
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 9%;
+  padding: 65px;
+}
+.footerBody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.footer-title h3 {
+  font-weight: bold;
+}
+
+.logo-title {
+  align-self: flex-end;
+}
+
+.footer-title,
+.footer-contact,
+.socialMedia {
+  text-align: right;
+  margin-bottom: 20px;
+}
+.footer-title,
+.footer-contact,
+.socialMedia {
+  margin-bottom: 0px;
+}
+.copyright {
+  margin-top: 40px;
+  font-size: 13px;
+}
+.logo-title img {
+  width: 225px;
+}
+.footerlinks a {
+  text-decoration: none;
+  color: rgb(61, 127, 179);
+}
+.socialMedia img {
+  width: 21px;
+}
+.socialMedia a {
+  margin-left: 20px;
+}
+.footerlinks {
+  position: relative;
+  left: 37%;
+}
+.contac-email{
+  font-size: 15px;
+}
+@media (max-width: 450px) {
+  .footer-title {
+    display: none;
+  }
+  .contac-email{
+    font-size: 10px;
+  }
+  .socialMedia img {
+    width: 18px;
+  }
+  .logo-title img {
+    width: 191px;
+  }
+  .footer {
+    padding: 23px;
+  }
+}

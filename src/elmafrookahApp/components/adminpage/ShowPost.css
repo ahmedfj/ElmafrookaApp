@@ -1,0 +1,156 @@
+.postImg {
+  max-width: 14em;
+  max-height: 240px;
+  border-radius: 1.5px;
+  border-radius: 15px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  color: rgb(61, 127, 179);
+}
+.images-container {
+  padding: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.images-container button {
+  height: 30px;
+  border-radius: 7px;
+}
+.rating-name{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.rating-name p{
+  text-align: start;
+  text-align: justify;
+}
+.rating-name h3{
+  text-align: justify;
+  width: max-content;
+}
+.post-title{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.post-title h3 {
+  width: max-content;
+  text-align: justify;
+}
+.short-description-cont{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: right;
+  text-align: justify;
+}
+.long-description-cont{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  width: 100%;
+  text-align: right;
+  text-align: justify;
+  
+}
+.showPost-cont {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.info-cont p {
+  font-size: 13px;
+  color: rgb(61, 127, 179);
+  text-align: justify;
+}
+.info-cont {
+  border-left: 1px solid rgb(61, 127, 179);
+  padding: 20px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.infolinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.info-cont button {
+  border-radius: 7px;
+}
+.infolinks button {
+  margin-right: 10px;
+}
+.btn-primary:hover {
+  background-color: rgba(61, 128, 179, 0.658);
+}
+.btn-primary {
+  background-color: rgb(61, 127, 179);
+  border: none;
+}
+.btn {
+  margin-right: 0px;
+}
+#imgform {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#imgform button {
+  margin-top: 10px;
+}
+.postmenu-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+
+  align-items: flex-start;
+}
+.postmenu-buttons button {
+  margin-right: 20px;
+}
+
+.custom-file-label {
+  overflow-x: hidden;
+}
+
+.dis-btn{
+  margin: 20px 0 0 0;
+  background-color: gray;
+  cursor: none;
+}
