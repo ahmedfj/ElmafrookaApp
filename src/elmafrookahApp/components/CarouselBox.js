@@ -114,7 +114,7 @@ const CarouselBox = ({ post }) => {
               : ""} 
               </div>
               <div className="title-box">
-                 <Link to={`/posts/${second._id}/${second.title}`}>{second.title}></Link> 
+                 <Link to={`/posts/${second._id}/${second.title}`}>{second.title}</Link> 
             <p>{second.shortdescription}</p>
               </div>
           

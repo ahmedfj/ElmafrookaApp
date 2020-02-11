@@ -36,6 +36,7 @@ const RatingStars = ({rating}) => {
         <img className="star" src={rateNumb >= 3 ? darkStar : lightStar} alt="star"/>
         <img className="star" src={rateNumb >= 4 ? darkStar : lightStar} alt="star"/>
         <img className="star" src={rateNumb >= 5 ? darkStar : lightStar} alt="star"/>
+        <span style={{margin:"0 15px 0 15px"}}>التقييم :</span>
       </div>
       </div>
    

@@ -56,7 +56,7 @@
   width: 100%;
   margin-bottom: 10px;
 }
-.post-title h3 {
+.post-title p {
   width: max-content;
   text-align: justify;
 }
@@ -82,7 +82,7 @@
   width: 100%;
   text-align: right;
   text-align: justify;
-  
+  white-space: pre-line;
 }
 .showPost-cont {
   display: flex;

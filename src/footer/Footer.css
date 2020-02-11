@@ -26,7 +26,10 @@
 .footer-title h3 {
   font-weight: bold;
 }
-
+.footer-title p{
+direction: ltr;
+margin-bottom: 2px ;
+}
 .logo-title {
   align-self: flex-end;
 }

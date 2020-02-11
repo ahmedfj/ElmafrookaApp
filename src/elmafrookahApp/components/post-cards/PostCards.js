@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 const PostCards = ({ post }) => {
   const options = { year: "numeric", month: "long", day: "numeric" };
+  
 
   return (
     <div className="public-card-box">
@@ -46,7 +47,7 @@ const PostCards = ({ post }) => {
               <div className="title-date">
                 <span>
                   {new Date(`${post.createdAt}`).toLocaleDateString(
-                    "ar-EG",
+                    "ar-MA",
                     options
                   )}
                 </span>

@@ -148,7 +148,6 @@ const EditPost = props => {
               <textarea
                 required
                 name="description"
-                wrap="hard"
                 onChange={handleChange}
                 value={formData.description}
               />

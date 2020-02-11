@@ -5,28 +5,10 @@ import searchBarIcon from "../../images/searchbaricon.png";
 // import ScreenLoader from "../components/ScreenLoader"
 
 import { withRouter } from "react-router-dom";
-// import PostCards from "../components/post-cards/PostCards";
-// import { publishedPostIndex } from "../api";
+
 const Searchbar = props => {
   const [searchText, setSearchText] = useState("");
-  // const [posts, setPosts] = useState([]);
-  // const [isLoading, setLoader] = useState(true);
 
-  // const fetchData = searchtext => {
-  //   publishedPostIndex()
-  //     .then(res => {
-  //       const publishedPosts = res.data.post.filter(
-  //         post =>
-  //           post.publishpost === true && post.title.includes(searchtext.trim())
-  //       );
-
-  //       setPosts(publishedPosts);
-  //       // setTimeout(() => {
-  //       //   setLoader(false) 
-  //       // }, 1000);
-  //     })
-  //     .catch(err => console.log(err));
-  // };
 
   const handleChange = e => {
     const value = e.target.value;
@@ -35,7 +17,6 @@ const Searchbar = props => {
   };
   const onSubmit = e => {
     e.preventDefault();
-    // fetchData(searchText);
     props.history.push(`/search/${searchText}`)
 
   };
@@ -56,9 +37,6 @@ const Searchbar = props => {
         </form>
       </div>
       <hr />
-      {/* { isLoading ? <ScreenLoader/> : ""}   */}
-
-      {/* <PostCards post={posts} /> */}
     </div>
   );
 };

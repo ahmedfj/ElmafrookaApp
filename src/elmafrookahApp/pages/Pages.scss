@@ -135,10 +135,11 @@
   .writer-box{
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-start;
     margin-top: 25px;
     padding-right: 2px;
+    margin-bottom: 5px;
     width: 100%;
     h4{
       font-size: 20px;
@@ -151,10 +152,10 @@
      height: 100%;
     }
     .img-box{
-      max-width: 110px;
-      min-width: 110px;
-      max-height: 115px;
-      min-height: 115px;
+      max-width: 122px;
+      min-width: 122px;
+      max-height: 127px;
+      min-height: 127px;
       margin-left: 12px;
     }
     
@@ -178,11 +179,12 @@
       margin-top: 20px;
       width: 100%;
       line-height: 2;
-      white-space: inherit;
       font-family: "Brando Arabic";
       padding: 0 15px;
       font-size: 21px;
       text-align: justify;
+      white-space: pre-line;
+      margin: 0;
     }
     hr {
       width: 100%;
@@ -194,7 +196,8 @@
       margin: 0 15px;
       margin-bottom: 15px;
       align-self: flex-start;
-      text-align: justify;
+      direction: rtl;
+      text-align: end;
     }
     .postImage {
       max-width: 75%;

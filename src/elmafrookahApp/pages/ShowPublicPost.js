@@ -9,6 +9,8 @@ import reviewsIcon from "../../images/reviewsicon.png";
 import profileIcon from "../../images/profileicon1.png";
 
 import logo from "../../images/logo/logo.png";
+import blankImg from "../../images/blank.png";
+
 import "./Pages.scss";
 import ReactPlayer from "react-player";
 import ScreenLoader from "../components/ScreenLoader"
@@ -100,10 +102,7 @@ const ShowPublicPost = ({ postId, name }) => {
      } 
        
         <div className="m-title-rate">
-          <h3
-            style={{
-              color:"rgb(61, 127, 179)"}}
-          >
+          <h3 style={{color:"rgb(61, 127, 179)"}}>
             {post.title}
           </h3>
         </div>
@@ -112,11 +111,11 @@ const ShowPublicPost = ({ postId, name }) => {
             
             <div className="writer-box">
               <div className="img-box">
-              <img className="writerimg"  src={post.writerimge ? post.writerimge : logo} alt="item" />
+              <img className="writerimg"  src={post.writerimge ? post.writerimge : blankImg} alt="item" />
 
               </div>
             <div>
-            <h4>{post.writername}</h4>
+            <p style={{fontSize:"17px", padding:"0"}}><span>الكاتب :</span>{post.writername}</p>
             <RatingStars  rating={post.rating}/>
             </div>
            
@@ -128,7 +127,7 @@ const ShowPublicPost = ({ postId, name }) => {
           
         <hr />
         <span>
-          {new Date(`${post.createdAt}`).toLocaleDateString("ar-EG", options)}
+          {new Date(`${post.createdAt}`).toLocaleDateString("ar-MA", options)}
         </span>
         <p>{post.description}</p>
       </div>

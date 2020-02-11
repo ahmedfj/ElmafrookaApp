@@ -152,8 +152,6 @@ const CreateNews = props => {
             required
               name="shortdescription"
               onChange={handleChange}
-              rows="5"
-              cols="30"
               placeholder="وصف قصير"
               maxLength="164"
               style={{
