@@ -88,12 +88,17 @@ const ShowPublicPost = ({ postId, name }) => {
           </h3>
         </div>
        {!post.videolink && !post.imge ?
-       <img className="postImage" src={logo} alt="post-img" />
+       <img className="postImage-logo" src={logo} alt="post-img" />
         :  
      <div style={{width: "100%",
            display: "flex", flexDirection:"column",alignItems:"center"}}>
            {post.vidorimg === "صورة" ? (
-          <img className="postImage" src={post.imge}  alt="post-img"/>
+         post.typeofpost === "بروفايل" ? <div className="postImage-box-profile">
+    <img className="postImage" src={post.imge}  alt="post-img"/>
+             </div> : <div className="postImage-box">
+    <img className="postImage" src={post.imge}  alt="post-img"/>
+             </div> 
+       
         ) : post.vidorimg === "فديو" ? (
           vidPlayer
         ) : ""}
@@ -116,7 +121,7 @@ const ShowPublicPost = ({ postId, name }) => {
               </div>
             <div>
             <p style={{fontSize:"17px", padding:"0"}}><span>الكاتب :</span>{post.writername}</p>
-            <RatingStars  rating={post.rating}/>
+            {post.typeofpost === "بروفايل" ? "" : <RatingStars  rating={post.rating}/>}
             </div>
            
             </div>

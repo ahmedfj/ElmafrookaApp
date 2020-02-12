@@ -63,7 +63,7 @@ const CreateNews = props => {
               value={formData.writername}
             />
           </div>
-        <div className="input-cont">
+       {formData.typeofpost === "مراجعات" ? <div className="input-cont">
             <label>التقييم</label>
             <select
               required
@@ -80,7 +80,7 @@ const CreateNews = props => {
               <option>4</option>
               <option>5</option>
             </select>
-          </div>
+          </div> : ""}
 
           </div>
             )

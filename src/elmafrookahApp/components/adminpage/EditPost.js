@@ -70,7 +70,7 @@ const EditPost = props => {
               value={formData.writername}
             />
           </div>
-        <div className="input-cont">
+          {formData.typeofpost === "مراجعات" ? <div className="input-cont">
             <label>التقييم</label>
             <select
               required
@@ -83,11 +83,11 @@ const EditPost = props => {
               <option>0</option>
               <option>1</option>
               <option>2</option>
-              <option>3</option>
+              <option> 3</option>
               <option>4</option>
               <option>5</option>
             </select>
-          </div>
+          </div> : ""}
 
           </div>
             );

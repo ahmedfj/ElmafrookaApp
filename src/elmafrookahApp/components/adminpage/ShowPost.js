@@ -373,11 +373,11 @@ const ShowPost = props => {
   //For Profile & Reviews only
   const showWriterInfo =(
     <React.Fragment>
-      <div>
-       <p>الكاتب</p>
-      <h3>{post.writername}</h3> 
+      <div className="writer-name">
+       <span>: الكاتب</span>
+      <p>{post.writername}</p> 
       </div>
-      <RatingStars rating={post.rating}/>
+    {post.typeofpost === "بروفايل" ? "" : <RatingStars rating={post.rating}/>}  
     </React.Fragment>
   )
   // Show the post type of image

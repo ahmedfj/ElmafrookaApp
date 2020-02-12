@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/storage'
 
  // Your web app's Firebase configuration
- let   firebaseConfig = {
+ let firebaseConfig = {
   apiKey: "AIzaSyADSwngJrBq6f3Pe2LlF6BDNPrAOEXC6GU",
   authDomain: "elmafrooka.firebaseapp.com",
   databaseURL: "https://elmafrooka.firebaseio.com",

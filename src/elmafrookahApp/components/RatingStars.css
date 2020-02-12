@@ -1,8 +1,11 @@
 .ratingstars{
 display: flex;
-flex-direction: row;
+flex-direction: row-reverse;
 justify-content: flex-end;
 align-items: center;
+}
+.rating-box{
+    direction: rtl;
 }
 .star{
     width: 17px;

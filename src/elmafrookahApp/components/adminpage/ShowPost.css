@@ -154,3 +154,12 @@
   background-color: gray;
   cursor: none;
 }
+
+.writer-name{
+  display: flex;
+  flex-direction: row-reverse;
+  
+}
+.writer-name span{
+  margin-left: 3px;
+}
