@@ -91,6 +91,12 @@
   min-width: 20em;
   min-height: 12em;
 }
+.publicpostimgLogo{
+  max-width: 17em;
+  max-height: 12em;
+  min-width: 17em;
+  min-height: 12em;
+}
 .publicpostvid {
   max-width: 25em;
   max-height: 240px;
@@ -106,7 +112,7 @@
 
 .img-row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 @media (max-width: 450px) {
@@ -120,7 +126,7 @@
 
   .img-row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .posticon {
     width: 4%;

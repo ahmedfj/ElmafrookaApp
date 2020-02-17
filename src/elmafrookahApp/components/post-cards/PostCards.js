@@ -40,7 +40,7 @@ const PostCards = ({ post }) => {
                   alt="item"
                 />            
               ) : (
-                <img className="publicpostimgLogo" style={{width:"81%"}} src={logo} alt="item" />
+                <img className="publicpostimgLogo" src={logo} alt="item" />
               )}
             </div>
             <div className="cardTitle">
