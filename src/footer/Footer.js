@@ -4,6 +4,7 @@ import "./Footer.css";
 import twitterIcon from "../images/social-media/twitter.png";
 import instIcon from "../images/social-media/inst.png";
 import titleIcon from "../images/logo/logo-title.png";
+import Searchbar from "../elmafrookahApp/components/Searchbar";
 
 const Footer = () => {
   return (
@@ -32,6 +33,8 @@ const Footer = () => {
       </div>
 
       <div className="logo-title">
+      <Searchbar/>
+
         <p>Powered by</p>
         <img src={titleIcon} alt="title" />
       </div>

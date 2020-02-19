@@ -36,3 +36,15 @@
     flex-direction: row-reverse;
     justify-content: center;
   }
+  @media (max-width:817px){
+    .search-cont{
+      display: none;
+    }
+  }
+
+  @media (max-width:450px){
+    .search-cont{
+      display: none;
+    }
+  }
+

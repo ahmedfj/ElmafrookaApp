@@ -10,7 +10,6 @@ import profileIcon from "../images/profileicon1.png";
 import searchIcon from "../images/m-searchbaricon.png";
 
 import AdminMenu from "./AdminMenu";
-import Searchbar from "../elmafrookahApp/components/Searchbar";
 
 const Header = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -188,7 +187,7 @@ const Header = ({ user }) => {
         {user ? <AdminMenu user={user} /> : ""}
       </header>
       {showMenu ? showList : ""}
-      <Searchbar/>
+    
     </div>
   );
 };

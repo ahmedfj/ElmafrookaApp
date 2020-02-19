@@ -22,7 +22,6 @@ const Searchbar = props => {
   };
   return (
     <div className={`search-cont`}>
-      <hr />
       <div className="searchForm">
         <form onSubmit={onSubmit} className="form-search">
           <input
@@ -36,7 +35,6 @@ const Searchbar = props => {
           </button>
         </form>
       </div>
-      <hr />
     </div>
   );
 };

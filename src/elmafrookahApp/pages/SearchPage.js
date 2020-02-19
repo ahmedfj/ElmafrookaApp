@@ -19,8 +19,19 @@ useEffect(() => {
   publishedPostIndex()
   .then(res => {
     const publishedPosts = res.data.post.filter(
-      post =>
-        post.publishpost === true && post.title.includes(searchText.trim())
+      post =>{
+        if (post.publishpost === true && post.title.includes(searchText.trim())){
+           return post
+        }else if(post.publishpost === true && post.description.includes(searchText.trim())){
+          return post
+        } else if(post.publishpost === true && post.shortdescription.includes(searchText.trim())){
+          return post
+        } else if(post.publishpost === true && post.writername.includes(searchText.trim())){
+          return post
+        }        
+           
+      }
+        
     );
 
     setPosts(publishedPosts);
