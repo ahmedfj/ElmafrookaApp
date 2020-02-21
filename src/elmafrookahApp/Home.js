@@ -7,25 +7,32 @@ import ScreenLoader from "./components/ScreenLoader"
 const Home = () => {
   const [post, setPost] = useState([]);
   const [isLoading, setLoader] = useState(true);
+ 
 
   useEffect(() => {
+   
+        
     publishedPostIndex()
-      .then(res => {
-        const publishedPost = res.data.post.filter(
-          p => p.publishpostmainpage === true
-        );
-          
-        setPost(publishedPost.slice(0,9).reverse());
-        setTimeout(() => {
-          setLoader(false) 
-        }, 1000);
-       
-      })
-      .catch(err => console.log(err));
-  }, []);
+    .then(res => {
+      const publishedPost = res.data.post.filter(
+        p => p.publishpostmainpage === true
+      );
+        
+      setPost(publishedPost.reverse().slice(0,9));
+      
+      setTimeout(() => {
+        setLoader(false) 
+      }, 1000);
+     
+    })
+    .catch(err => console.log(err));
+  },[]);
+
+
+
 
   return (
-    <div id="homepage">
+    <div  id="homepage">
      { isLoading ? (<ScreenLoader/> ): !isLoading ?
      (
        <React.Fragment>
@@ -34,7 +41,6 @@ const Home = () => {
        </React.Fragment>
      
      ):""}  
-     
     </div>
   );
 };

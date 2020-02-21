@@ -6,6 +6,9 @@
 }
 
 #news-page {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
   .page-title {
     display: flex;
     flex-direction: row;
@@ -22,6 +25,16 @@
       height: 1%;
       margin-left: 10px;
     }
+  }
+  button{
+    color:rgb(61, 127, 179);
+    outline-style: none;
+    border-color:rgb(61, 127, 179);
+    border-radius: 20px;
+  }
+  button:hover{
+    color:rgb(255, 255, 255) ;
+    background-color:rgb(61, 127, 179) ;
   }
 }
 #profile-page{
@@ -42,7 +55,16 @@
       margin-left: 10px;
     }
   }
-
+  button{
+    color:rgb(61, 127, 179);
+    outline-style: none;
+    border-color:rgb(61, 127, 179);
+    border-radius: 20px;
+  }
+  button:hover{
+    color:rgb(255, 255, 255) ;
+    background-color:rgb(61, 127, 179) ;
+  }
 
 }
 #longInterviews-page {
@@ -63,6 +85,16 @@
       margin-left: 10px;
     }
   }
+  button{
+    color:rgb(61, 127, 179);
+    outline-style: none;
+    border-color:rgb(61, 127, 179);
+    border-radius: 20px;
+  }
+  button:hover{
+    color:rgb(255, 255, 255) ;
+    background-color:rgb(61, 127, 179) ;
+  }
 }
 
 #shortInterviews-page {
@@ -82,6 +114,16 @@
       height: 1%;
       margin-left: 10px;
     }
+  }
+  button{
+    color:rgb(61, 127, 179);
+    outline-style: none;
+    border-color:rgb(61, 127, 179);
+    border-radius: 20px;
+  }
+  button:hover{
+    color:rgb(255, 255, 255) ;
+    background-color:rgb(61, 127, 179) ;
   }
 }
 
@@ -110,6 +152,16 @@
       width: 10%;
       border-radius: 10px;
     }
+  }
+  button{
+    color:rgb(61, 127, 179);
+    outline-style: none;
+    border-color:rgb(61, 127, 179);
+    border-radius: 20px;
+  }
+  button:hover{
+    color:rgb(255, 255, 255) ;
+    background-color:rgb(61, 127, 179) ;
   }
 }
 
@@ -170,7 +222,9 @@
       margin-bottom: 17px;
       margin-top: 20px;
       font-family: "Brando Arabic";
-      font-size: 25px;
+      font-size: 29px;
+      font-weight: 600;
+      line-height: 3rem;
       text-align: end;
       text-align: justify;
     }

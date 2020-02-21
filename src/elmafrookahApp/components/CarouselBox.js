@@ -88,7 +88,6 @@ const CarouselBox = ({ post }) => {
            
               <div className="title-box">
                 <Link to={`/posts/${first._id}/${first.title}`}>{first.title}</Link> 
-             <p>{first.shortdescription}</p>
               </div>
  
           </Carousel.Caption>
@@ -115,7 +114,6 @@ const CarouselBox = ({ post }) => {
               </div>
               <div className="title-box">
                  <Link to={`/posts/${second._id}/${second.title}`}>{second.title}</Link> 
-            <p>{second.shortdescription}</p>
               </div>
           
           </Carousel.Caption>
@@ -143,7 +141,6 @@ const CarouselBox = ({ post }) => {
                </div>
               <div className="title-box">
                   <Link to={`/posts/${third._id}/${third.title}`}>{third.title}</Link> 
-             <p>{third.shortdescription}</p>
               </div>
           
           </Carousel.Caption>

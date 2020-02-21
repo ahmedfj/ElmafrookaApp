@@ -20,16 +20,18 @@ useEffect(() => {
   .then(res => {
     const publishedPosts = res.data.post.filter(
       post =>{
+        let result;
         if (post.publishpost === true && post.title.includes(searchText.trim())){
-           return post
+          
+           return result = post
         }else if(post.publishpost === true && post.description.includes(searchText.trim())){
-          return post
+          return result = post
         } else if(post.publishpost === true && post.shortdescription.includes(searchText.trim())){
-          return post
+          return result = post
         } else if(post.publishpost === true && post.writername.includes(searchText.trim())){
-          return post
-        }        
-           
+          return result = post
+        } 
+        return result       
       }
         
     );

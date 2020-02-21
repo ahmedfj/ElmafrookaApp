@@ -20,6 +20,51 @@
   text-align: right;
   color: rgb(61, 127, 179);
 }
+.RichTextEditor__root___2QXK-{
+  height: 234px;
+  text-align: justify;
+ width: 50em;
+ direction: rtl;
+}
+.RichTextEditor__editor___1QqIU{
+  height: 180px;
+    width: 100%;
+  direction: rtl;
+}
+.EditorToolbar__root___3_Aqz {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ButtonWrap__root___1EO_R {
+  margin-left: 10px;
+}
+.ButtonWrap__root___1EO_R button{
+border: none;
+}
+.public-DraftStyleDefault-ltr {
+  direction: rtl;
+  text-align: right;
+}
+ .sketch-picker{
+  position: absolute;
+  top: 461px;
+  right: 155px;
+ z-index: 10;
+}
+
+.color-btn-create{
+    cursor: pointer;
+    position: relative;
+    top: 58px;
+    left: -164px;
+    color: black;
+    padding: 5px;
+    border-radius: 9px;
+    font-weight: bold;
+
+}
 .create-container select {
   width: 95%;
   height: 35px;

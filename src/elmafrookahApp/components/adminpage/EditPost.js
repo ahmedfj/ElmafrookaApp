@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { showPost, updatePost } from "../../api";
 import { withRouter } from "react-router-dom";
 import "./EditPost.css";
+import RichTextEditor from 'react-rte';
+import { SketchPicker } from 'react-color'
 
 const EditPost = props => {
   const user = props.user;
@@ -12,23 +14,61 @@ const EditPost = props => {
     videolink: "",
     shortdescription: "",
     description: "",
+    description_color:"",
     typeofpost: "",
     writername:"",
     rating:"",
     publishpost: false,
     isoncarousel: false
   });
+  const [colorPickerBg,setColorPickerBg] = useState(undefined)
+  const [choosenColor,setChoosenColor] = useState(undefined)
+  const[showColors,setShowColors] = useState(false)
+const handleChangeColor = (color) =>{
+setColorPickerBg(color)
+setChoosenColor(color.hex);
+formData.description_color = color.hex
+
+}
+
+  const [textValue,setTextValue] = useState(RichTextEditor.createValueFromString(formData.description,'html')) 
 
   useEffect(() => {
+    
     showPost(user, postId)
       .then(response => {
+        
         const post = response.data.post;
         setFormData({
           ...post
         });
+        setTextValue(RichTextEditor.createValueFromString(response.data.post.description,'html'))
+        setChoosenColor(response.data.post.description_color)
+        console.log(textValue)
       })
       .catch(error => console.log(error));
+
   }, []);
+
+ const handleEditorChange = (value) =>{
+  value.toString('html')
+   setTextValue(value)
+   formData.description = textValue._cache.html
+  console.log(formData.description);
+  
+ 
+}
+const toolbarConfig = {
+  // Optionally specify the groups to display (displayed in the order listed).
+  display: ['INLINE_STYLE_BUTTONS', 'HISTORY_BUTTONS'],
+  INLINE_STYLE_BUTTONS: [
+    {label: 'Bold', style: 'BOLD', className: 'custom-css-class'},
+    {label: 'Italic', style: 'ITALIC'},
+    {label: 'Underline', style: 'UNDERLINE'}
+  ]
+};
+
+
 
   const handleChange = event => {
     //get the name of input
@@ -143,14 +183,25 @@ const EditPost = props => {
               />
             </div>
             <div className="input-cont">
+              <p onClick={() => setShowColors(!showColors)} className="color-btn">Color</p>
               <label>الوصف</label>
               <br />
-              <textarea
-                required
-                name="description"
-                onChange={handleChange}
-                value={formData.description}
-              />
+              <div style={{color:`${choosenColor}`}}>
+               <RichTextEditor
+                value={textValue}
+                onChange={handleEditorChange}
+                placeholder="الوصف"
+                toolbarConfig={toolbarConfig}
+              /> 
+              </div>
+              <div onMouseLeave={() => setShowColors(false)}>
+               {showColors ?<SketchPicker
+                   color={colorPickerBg}
+                   onChange={handleChangeColor}
+                   disableAlpha={true}
+                /> : "" } 
+              </div>
+         
             </div>
           </div>
           <hr />

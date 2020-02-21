@@ -7,6 +7,7 @@ import longInterVIcon from "../../images/leftarrow.png";
 import shortInterVIcon from "../../images/rightarrow.png";
 import reviewsIcon from "../../images/reviewsicon.png";
 import profileIcon from "../../images/profileicon1.png";
+import ReactHtmlParser from 'react-html-parser';
 
 import logo from "../../images/logo/logo.png";
 import blankImg from "../../images/blank.png";
@@ -15,6 +16,7 @@ import "./Pages.scss";
 import ReactPlayer from "react-player";
 import ScreenLoader from "../components/ScreenLoader"
 import RatingStars from "../components/RatingStars";
+
 
 const ShowPublicPost = ({ postId, name }) => {
   const [post, setPost] = useState({});
@@ -134,7 +136,11 @@ const ShowPublicPost = ({ postId, name }) => {
         <span>
           {new Date(`${post.createdAt}`).toLocaleDateString("ar-MA", options)}
         </span>
-        <p>{post.description}</p>
+        <div style={{color:post.description_color,width: "100%"}}>
+              {ReactHtmlParser(post.description)} 
+             </div>
+         
+        {console.log(post.description)}
       </div>
     </div>
   );

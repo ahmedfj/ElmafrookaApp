@@ -28,10 +28,7 @@ const Footer = () => {
             <img src={instIcon} alt="instgram" />
           </a>
         </div>
-
-        {/* <p className="copyright">Copyright © 2019, Elmafrookah</p> */}
       </div>
-
       <div className="logo-title">
       <Searchbar/>
 

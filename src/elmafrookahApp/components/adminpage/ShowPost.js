@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactHtmlParser from 'react-html-parser';
 
 import { storage } from "../../../firebase-storage/firebaseConfig";
 import {
@@ -437,14 +438,16 @@ const ShowPost = props => {
           )}
           {createImg ? uploadAnImg : ""}
         </div>
-        <AddCarousel user={user} postId={postId} />
+        <AddCarousel user={user} postId={postId}/>
         <div className="short-description-cont">
              <p>الوصف القصير</p>
         <p style={{ fontSize: "20px" }}>{post.shortdescription}</p>
         </div>
         <div className="long-description-cont">
              <p>الوصف</p>
-        <p style={{ fontSize: "20px" }}>{post.description}</p>
+             <div style={{color:post.description_color}}>
+              {ReactHtmlParser(post.description)} 
+             </div>
         </div>
       </div>
       <div className="info-cont">
@@ -599,7 +602,10 @@ const ShowPost = props => {
         </div>
         <div className="long-description-cont">
              <p>الوصف</p>
-        <p style={{ fontSize: "20px" }}>{post.description}</p>
+             <div style={{color:post.description_color}}>
+              {ReactHtmlParser(post.description)} 
+             </div>
+        
         </div>
       </div>
       <div className="info-cont">

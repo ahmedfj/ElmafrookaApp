@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { createPost } from "../../api";
 import { withRouter, Link } from "react-router-dom";
 import "./CreatePost.css";
+import RichTextEditor from 'react-rte';
+import { SketchPicker } from 'react-color'
 
 const CreateNews = props => {
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
+    description_color:"",
     shortdescription: "",
     publishpost: false,
     publishpostmainpage: false,
@@ -17,6 +21,35 @@ const CreateNews = props => {
     isoncarousel: false
   });
 
+  const [colorPickerBg,setColorPickerBg] = useState(undefined)
+  const [choosenColor,setChoosenColor] = useState(undefined)
+  const[showColors,setShowColors] = useState(false)
+const handleChangeColor = (color) =>{
+setColorPickerBg(color)
+setChoosenColor(color.hex);
+formData.description_color = color.hex
+
+}
+
+const [textValue,setTextValue] = useState(RichTextEditor.createEmptyValue()) 
+
+ const handleEditorChange = (value) =>{
+  value.toString('html')
+   setTextValue(value)
+   formData.description = textValue._cache.html
+  console.log(formData.description);
+  
+ 
+}
+const toolbarConfig = {
+  // Optionally specify the groups to display (displayed in the order listed).
+  display: ['INLINE_STYLE_BUTTONS', 'HISTORY_BUTTONS'],
+  INLINE_STYLE_BUTTONS: [
+    {label: 'Bold', style: 'BOLD', className: 'custom-css-class'},
+    {label: 'Italic', style: 'ITALIC'},
+    {label: 'Underline', style: 'UNDERLINE'}
+  ]
+};
   const handleChange = event => {
     //get the name of input
     const name = event.target.name;
@@ -169,21 +202,23 @@ const CreateNews = props => {
 
           <div className="input-cont">
             <label>الوصف</label>
-            <textarea
-              required
-              className="form-control"
-              name="description"
-              type="text"
-              placeholder="الوصف"
-              style={{
-                width: "50em",
-                resize: "none",
-                height: "192px",
-                textAlign: "justify",
-              }}
-              onChange={handleChange}
-              value={formData.description}
-            />
+            <p onClick={() => setShowColors(!showColors)} className="color-btn-create">Color</p>
+            <div style={{color:`${choosenColor}`}}>
+            <RichTextEditor
+        value={textValue}
+        onChange={handleEditorChange}
+        placeholder="الوصف"
+        toolbarConfig={toolbarConfig}
+        rootStyle={{toolbarStyle:{color:"red"}}}
+      />
+      </div>
+      <div onMouseLeave={() => setShowColors(false)}>
+               {showColors ?<SketchPicker
+                   color={colorPickerBg}
+                   onChange={handleChangeColor}
+                   disableAlpha={true}
+                /> : "" } 
+              </div>
           </div>
         </div>
         <button type="submit" className="btn btn-primary crBtn">

@@ -1,6 +1,6 @@
 {
   "name": "elmafrookah",
-  "homepage": "https://elmafrokaapp.herokuapp.com/",  
+  "homepage": "https://elmafrokaapp.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,9 +20,12 @@
     "react": "^16.4.2",
     "react-animated-css": "^1.2.1",
     "react-bootstrap": "^1.0.0-beta.16",
+    "react-color": "^2.18.0",
     "react-dom": "^16.4.2",
+    "react-html-parser": "^2.0.2",
     "react-player": "^1.14.2",
     "react-router-dom": "^4.3.1",
+    "react-rte": "^0.16.1",
     "react-scroll-parallax": "^2.2.0",
     "resolve": "1.6.0",
     "url-loader": "0.6.2"

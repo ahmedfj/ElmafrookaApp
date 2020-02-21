@@ -16,7 +16,51 @@
   padding: 5px;
   direction: rtl;
 }
+.RichTextEditor__root___2QXK-{
+  height: 234px;
+  text-align: justify;
+ width: 50em;
+ direction: rtl;
+}
+.RichTextEditor__editor___1QqIU{
+  height: 180px;
+    width: 100%;
+  direction: rtl;
+}
+.EditorToolbar__root___3_Aqz {
 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ButtonWrap__root___1EO_R {
+  margin-left: 10px;
+}
+.ButtonWrap__root___1EO_R button{
+border: none;
+}
+.public-DraftStyleDefault-ltr {
+  direction: rtl;
+  text-align: right;
+}
+.sketch-picker{
+  position: absolute;
+  top: 461px;
+  right: 209px;
+ z-index: 10;
+}
+
+.color-btn{
+    cursor: pointer;
+    position: relative;
+    top: 92px;
+    left: 173px;
+    color: black;
+    padding: 5px;
+    border-radius: 9px;
+    font-weight: bold;
+
+}
 .editinfo input {
   border: 1px solid #ced4da;
   border-radius: 5px;
