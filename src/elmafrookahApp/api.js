@@ -1,7 +1,8 @@
 import apiUrl from "../apiConfig";
 import axios from "axios";
 
-// News
+
+
 export const postsIndex = user => {
   return axios({
     method: "GET",

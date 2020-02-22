@@ -14,7 +14,6 @@ import AdminHomepage from './elmafrookahApp/components/adminpage/AdminHomepage'
 
 //Admin
 import CreatePost from './elmafrookahApp/components/adminpage/CreatePost'
-import NewsPosts from './elmafrookahApp/components/adminpage/NewsPosts'
 import ShowPost from './elmafrookahApp/components/adminpage/ShowPost'
 import EditPost from './elmafrookahApp/components/adminpage/EditPost'
 import Home from './elmafrookahApp/Home'
@@ -23,15 +22,13 @@ import Home from './elmafrookahApp/Home'
 import ShowPublicPost from './elmafrookahApp/pages/ShowPublicPost'
 import InterviewsPosts from './elmafrookahApp/components/adminpage/InterviewsPosts'
 import ReviewsPosts from './elmafrookahApp/components/adminpage/ReviewsPosts '
-import NewsPage from './elmafrookahApp/pages/NewsPage'
 import LongInterviewsPage from './elmafrookahApp/pages/LongInterviewsPage'
 import FeaturePage from './elmafrookahApp/pages/FeaturePage'
 import ReviewsPage from './elmafrookahApp/pages/ReviewsPage'
 import SearchPage from './elmafrookahApp/pages/SearchPage'
 import ProfilePage from './elmafrookahApp/pages/ProfilePage'
 import ProfilePosts from './elmafrookahApp/components/adminpage/ProfilePosts'
-// import Searchbar from './elmafrookahApp/pages/Searchbar'
-// import ScreenLoader from './elmafrookahApp/components/ScreenLoader'
+
 
 
 
@@ -91,14 +88,6 @@ class App extends Component {
               <ShowPost user={user} postId={props.match.params.id} />
             )}
           />
-           <AuthenticatedRoute
-            exact
-            path="/news/posts"
-            user={user}
-            render={props => (
-              <NewsPosts user={user}/>
-            )}
-          />
             <AuthenticatedRoute exact path="/interviews/posts"  user={user} render={(props) => (
              <InterviewsPosts user={user}/>
           )} />
@@ -118,9 +107,6 @@ class App extends Component {
           />
            <Route exact path='/' render={() => (
              <Home/>
-          )} />
-           <Route exact path='/news' render={() => (
-             <NewsPage/>
           )} />
              <Route exact path='/long-interviews' render={() => (
              <LongInterviewsPage/>

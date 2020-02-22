@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import "./Searchbar.scss";
 import searchBarIcon from "../../images/searchbaricon.png";
-// import ScreenLoader from "../components/ScreenLoader"
 
 import { withRouter } from "react-router-dom";
 
@@ -26,6 +25,7 @@ const Searchbar = props => {
         <form onSubmit={onSubmit} className="form-search">
           <input
             onChange={handleChange}
+            style={{width:`${props.width}`}}
             className="form-input"
             type="text"
             value={searchText}

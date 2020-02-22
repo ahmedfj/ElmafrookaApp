@@ -2,7 +2,6 @@ import React from "react";
 import "./AdminHomepage.css";
 
 import { Link } from "react-router-dom";
-import newsIcon from "../../../images/newsicon.png";
 import reviewsIcon from "../../../images/reviewsicon.png";
 import interviewsIcon from "../../../images/interviewsicon.png";
 import profileIcon from "../../../images/profileicon1.png";
@@ -29,12 +28,6 @@ const AdminHomepage = ({ user }) => {
       <div id="adminhomepage">
         <aside className="side-menu">{user ? authenticatedOptions : ""}</aside>
         <div className="allitems-cont">
-          <Link to="/news/posts">
-            <div className="div-row">
-              <img style={{ width: "34%" }} src={newsIcon} alt="newsicon" />
-              <p>التقارير</p>
-            </div>
-          </Link>
           <Link to="/interviews/posts">
             <div className="div-row">
               <img

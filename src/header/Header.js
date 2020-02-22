@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo/logo.png";
 import "./Header.scss";
-import newsIcon from "../images/newsicon.png";
 import interviewsLIcon from "../images/leftarrow.png";
 import interviewsRIcon from "../images/rightarrow.png";
 import reviewsIcon from "../images/reviewsicon.png";
@@ -10,12 +9,17 @@ import profileIcon from "../images/profileicon1.png";
 import searchIcon from "../images/m-searchbaricon.png";
 
 import AdminMenu from "./AdminMenu";
+import Searchbar from "../elmafrookahApp/components/Searchbar";
 
 const Header = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const alwaysOptions = (
     <React.Fragment>
+
+       <Searchbar width="8em"/> 
+   
+     
       <Link className="headLink" to="/profile">
       بروفــــــايـل{" "}
         <img className="posticonHead" src={profileIcon} alt="item" />{" "}
@@ -29,19 +33,7 @@ const Header = ({ user }) => {
         <img className="posticonHead" src={interviewsRIcon} alt="item" />{" "}
       </Link>
 
-      <Link
-        
-        className="headLink"
-        to="/reviews"
-      >
-        مــــراجعــــات{" "}
-        <img
-          style={{ height: "13%" }}
-          className="posticonHead"
-          src={reviewsIcon}
-          alt="item"
-        />
-      </Link>
+   
 
       <Link
         onClick={() => setShowMenu(false)}
@@ -53,25 +45,35 @@ const Header = ({ user }) => {
         <p>الـمفــــروكـــة</p>
         <p className="eng-name">Elmafrooka</p>
       </Link>
-      <Link
+      {/* <div style={{width: "29%",
+             display: "flex",
+            flexDirection: "row",
+           justifyContent: "inherit"
+           }}> */}
+       <Link
         className="headLink"
         to="/long-interviews"
       >
         مقـــــــابــــــلات{" "}
         <img className="posticonHead" src={interviewsLIcon} alt="item" />
       </Link>
-
-      <Link
+        <Link 
         className="headLink"
-        to="/news"
+        to="/reviews"
       >
-        تـــقـــــــاريــــر{" "}
-        <img className="posticonHead" src={newsIcon} alt="item" />
+        مــــراجعــــات{" "}
+        <img
+          style={{ height: "13%" }}
+          className="posticonHead"
+          src={reviewsIcon}
+          alt="item"
+        />
       </Link>
-
       <Link className="headLink" to="/">
       الــــرئـــيـسـيــة
-      </Link>
+      </Link>  
+      {/* </div> */}
+     
     </React.Fragment>
   );
 
@@ -150,17 +152,6 @@ const Header = ({ user }) => {
           >
             مقـــــــابــــــلات{" "}
             <img className="posticonHead" src={interviewsLIcon} alt="item" />
-          </Link>
-        </li>
-        <li>
-          {" "}
-          <Link
-            onClick={() => setShowMenu(false)}
-            className="m-headLink"
-            to="/news"
-          >
-            تـــقـــــــاريــــر{" "}
-            <img className="posticonHead" src={newsIcon} alt="item" />
           </Link>
         </li>
         <li>

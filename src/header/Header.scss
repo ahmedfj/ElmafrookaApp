@@ -55,10 +55,11 @@ $charcoal: #bbb;
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   font-weight: bold;
   font-size: small;
-  width: 100%;
+  width: 95%;
+ 
 }
 .headLink {
   color: rgb(61, 127, 179);
@@ -138,7 +139,7 @@ $charcoal: #bbb;
     border-bottom: 1px solid rgb(167, 167, 167);
   }
 }
-@media (max-width: 817px) {
+@media (max-width: 867px) {
   .main-header {
     border: 1px solid rgb(196, 196, 196);
   }

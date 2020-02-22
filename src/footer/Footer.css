@@ -28,7 +28,7 @@
 }
 .footer-title p{
 direction: ltr;
-margin-bottom: 2px ;
+margin-bottom: 0;
 }
 .logo-title {
   align-self: flex-end;
@@ -44,6 +44,10 @@ margin-bottom: 2px ;
 .footer-contact,
 .socialMedia {
   margin-bottom: 0px;
+}
+.footer-contact p{
+  margin-bottom: 0;
+
 }
 .copyright {
   margin-top: 40px;

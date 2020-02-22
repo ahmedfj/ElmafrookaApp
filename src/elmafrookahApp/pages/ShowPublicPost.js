@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { showPublicPost } from "../api";
 import { withRouter } from "react-router-dom";
-import newsIcon from "../../images/newsicon.png";
 import longInterVIcon from "../../images/leftarrow.png";
 import shortInterVIcon from "../../images/rightarrow.png";
 import reviewsIcon from "../../images/reviewsicon.png";
@@ -53,8 +52,6 @@ const ShowPublicPost = ({ postId, name }) => {
     
           {  post.typeofpost === "مقابلات"
                 ? <p style={{color: "rgb(61, 127, 179)"}}>مقـــــــابــــــلات</p>
-                : post.typeofpost === "تقارير"
-                ? <p style={{color:  "rgb(61, 127, 179)"}}>تـــقـــــــاريــــر</p>
                 : post.typeofpost === "فيتشر"
                 ? <p style={{color:  "rgb(61, 127, 179)"}}>فيــــتــــشـر</p>
                 : post.typeofpost === "مراجعات"
@@ -66,8 +63,6 @@ const ShowPublicPost = ({ postId, name }) => {
           src={
             post.typeofpost === "مقابلات"
               ? longInterVIcon
-              : post.typeofpost === "تقارير"
-              ? newsIcon
               : post.typeofpost === "فيتشر"
               ? shortInterVIcon
               : post.typeofpost === "مراجعات"

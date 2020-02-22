@@ -2,7 +2,6 @@ import React from "react";
 import "./PostCards.scss";
 
 import logo from "../../../images/logo/logo.png";
-import newsIcon from "../../../images/newsicon.png";
 import interviewsLIcon from "../../../images/leftarrow.png";
 import interviewsRIcon from "../../../images/rightarrow.png";
 import reviewsIcon from "../../../images/reviewsicon.png";
@@ -20,9 +19,7 @@ const PostCards = ({ post }) => {
         return (
           <div key={index} className={`public-card`}>
             <div className="img-row">
-            {post.typeofpost === "تقارير" ? (
-                <img className="posticon" src={newsIcon} alt="item" />
-              ) : post.typeofpost === "مقابلات" ? (
+            {post.typeofpost === "مقابلات" ? (
                 <img className="posticon" src={interviewsLIcon} alt="item" />
               ) : post.typeofpost === "فيتشر" ? (
                 <img className="posticon" src={interviewsRIcon} alt="item" />

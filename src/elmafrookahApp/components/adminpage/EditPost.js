@@ -148,7 +148,6 @@ const toolbarConfig = {
                 id="inlineFormCustomSelectPref"
               >
                 <option value=""> آختر</option>
-                <option>تقارير</option>
                 <option>بروفايل</option>
                 <option> مقابلات</option>
                 <option>فيتشر</option>

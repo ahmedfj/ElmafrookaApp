@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./CarouselBox.scss";
 import { Carousel } from "react-bootstrap";
 import {Link} from "react-router-dom"
-import newsIcon from "../../images/crnewsicon.png";
 import interviewsLIcon from "../../images/crleftarrow.png";
 import interviewsRIcon from "../../images/crrightarrow.png";
 import reviewsIcon from "../../images/crreviews.png";
@@ -21,12 +20,6 @@ const CarouselBox = ({ post }) => {
   const first = onCarousel[0] ? onCarousel[0] : "";
   const second = onCarousel[1] ? onCarousel[1] : "";
   const third = onCarousel[2] ? onCarousel[2] : "";
-
-  const showNewsIcons = (
-    <React.Fragment>
-      <img className="posticonCr" src={newsIcon} alt="item" />
-    </React.Fragment>
-  );
 
   const showIterVLIcons = (
     <React.Fragment>
@@ -73,9 +66,7 @@ const CarouselBox = ({ post }) => {
 
           <Carousel.Caption>
             <div className="icon-box">
-               {first.typeofpost === "تقارير"
-              ? showNewsIcons
-              : first.typeofpost === "مقابلات"
+               {first.typeofpost === "مقابلات"
               ? showIterVLIcons
               : first.typeofpost === "فيتشر"
               ? showIterVRIcons
@@ -100,9 +91,7 @@ const CarouselBox = ({ post }) => {
           />
           <Carousel.Caption>
             <div className="icon-box">
-            {second.typeofpost === "تقارير"
-              ? showNewsIcons
-              : second.typeofpost === "مقابلات"
+            {second.typeofpost === "مقابلات"
               ? showIterVLIcons
               : second.typeofpost === "فيتشر"
               ? showIterVRIcons
@@ -127,9 +116,7 @@ const CarouselBox = ({ post }) => {
 
           <Carousel.Caption>
             <div className="icon-box">
-            {third.typeofpost === "تقارير"
-              ? showNewsIcons
-              : third.typeofpost === "مقابلات"
+            {third.typeofpost === "مقابلات"
               ? showIterVLIcons
               : third.typeofpost === "فيتشر"
               ? showIterVRIcons
