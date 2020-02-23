@@ -31,7 +31,6 @@ const ShortInterviewsPage = props => {
             .reverse()
             .slice(0, showPost)
         );
-
         setTimeout(() => {
           setLoader(false);
         }, 1000);
