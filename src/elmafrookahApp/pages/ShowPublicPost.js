@@ -134,8 +134,6 @@ const ShowPublicPost = ({ postId, name }) => {
         <div style={{color:post.description_color,width: "100%"}}>
               {ReactHtmlParser(post.description)} 
              </div>
-         
-        {console.log(post.description)}
       </div>
     </div>
   );

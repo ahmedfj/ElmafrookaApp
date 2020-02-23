@@ -36,9 +36,7 @@ const [textValue,setTextValue] = useState(RichTextEditor.createEmptyValue())
  const handleEditorChange = (value) =>{
    value.toString('html')
    setTextValue(value)
-   formData.description = textValue._cache.html
-   console.log(formData.description);
-  
+   formData.description = textValue._cache.html  
  
 }
 const toolbarConfig = {

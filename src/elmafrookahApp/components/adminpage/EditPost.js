@@ -44,7 +44,6 @@ formData.description_color = color.hex
         });
         setTextValue(RichTextEditor.createValueFromString(response.data.post.description,'html'))
         setChoosenColor(response.data.post.description_color)
-        console.log(textValue)
       })
       .catch(error => console.log(error));
 
@@ -53,10 +52,7 @@ formData.description_color = color.hex
  const handleEditorChange = (value) =>{
   value.toString('html')
    setTextValue(value)
-   formData.description = textValue._cache.html
-  console.log(formData.description);
-  
- 
+   formData.description = textValue._cache.html  
 }
 const toolbarConfig = {
   // Optionally specify the groups to display (displayed in the order listed).
