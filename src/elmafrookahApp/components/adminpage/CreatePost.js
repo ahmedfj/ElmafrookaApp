@@ -5,7 +5,7 @@ import "./CreatePost.css";
 import RichTextEditor from 'react-rte';
 import { SketchPicker } from 'react-color'
 
-const CreateNews = props => {
+const CreateNews = (props) => {
 
   const [formData, setFormData] = useState({
     title: "",
@@ -34,10 +34,10 @@ formData.description_color = color.hex
 const [textValue,setTextValue] = useState(RichTextEditor.createEmptyValue()) 
 
  const handleEditorChange = (value) =>{
-  value.toString('html')
+   value.toString('html')
    setTextValue(value)
    formData.description = textValue._cache.html
-  console.log(formData.description);
+   console.log(formData.description);
   
  
 }
@@ -132,10 +132,10 @@ const toolbarConfig = {
               id="inlineFormCustomSelectPref"
             >
               <option value=""> آختر</option>
-              <option>تقارير</option>
-              <option> مقابلات</option>
-              <option>فيتشر</option>
-              <option>مراجعات</option>
+                <option>بروفايل</option>
+                <option> مقابلات</option>
+                <option>فيتشر</option>
+                <option>مراجعات</option> 
             </select>
           </div>
 
@@ -200,7 +200,6 @@ const toolbarConfig = {
           </div>
 
           <div className="input-cont">
-            <label>الوصف</label>
             <p onClick={() => setShowColors(!showColors)} className="color-btn-create">Color</p>
             <div style={{color:`${choosenColor}`}}>
             <RichTextEditor
@@ -208,7 +207,6 @@ const toolbarConfig = {
         onChange={handleEditorChange}
         placeholder="الوصف"
         toolbarConfig={toolbarConfig}
-        rootStyle={{toolbarStyle:{color:"red"}}}
       />
       </div>
       <div onMouseLeave={() => setShowColors(false)}>
