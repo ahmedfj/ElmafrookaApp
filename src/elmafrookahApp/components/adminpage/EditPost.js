@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { showPost, updatePost } from "../../api";
 import { withRouter } from "react-router-dom";
 import "./EditPost.css";
-import RichTextEditor from 'react-rte';
-import { SketchPicker } from 'react-color'
+
 import Texteditor from "./Texteditor";
 
 const EditPost = props => {
@@ -34,7 +33,6 @@ const EditPost = props => {
           ...post
         });
         setDescriptionData(post.description)
-          console.log(post);
           
       })
       .catch(error => console.log(error));

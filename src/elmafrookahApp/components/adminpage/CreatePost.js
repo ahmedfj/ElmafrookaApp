@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { createPost } from "../../api";
 import { withRouter, Link } from "react-router-dom";
 import "./CreatePost.css";
-import RichTextEditor from 'react-rte';
-import { SketchPicker } from 'react-color'
+
 import Texteditor from "./Texteditor";
 
 const CreateNews = (props) => {
@@ -29,7 +28,6 @@ const handleEditorChange = (value) =>{
 
 
 formData.description = value
-console.log(formData.description);
  
 };
 

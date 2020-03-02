@@ -36,7 +36,7 @@ class TextEditor extends React.Component {
       }
       
       //   const formData = new FormData();
-      console.log(file);
+      // console.log(file);
       const uploadTask = storage.ref(`images/editor-${file.name}-${setId}`).put(file);
       // Firbase storage
 
@@ -56,7 +56,7 @@ class TextEditor extends React.Component {
             .getDownloadURL()
             .then(url => {
               //Save the new image in DB
-              console.log("uploded to storage");
+              // console.log("uploded to storage");
             //   this.state.imgArr.push({ url: url, ind: range.index });
               
                 this.props.imgsArr.push({ url: url, ind: range.index });
@@ -76,7 +76,7 @@ class TextEditor extends React.Component {
 
   componentDidMount() {
     this.attachQuillRefs();
-    console.log(this.props.imgsArr);
+    // console.log(this.props.imgsArr);
     
   }
 
@@ -88,8 +88,8 @@ class TextEditor extends React.Component {
   updateImages = updatedUrl => {
     console.log(updatedUrl);
      const filteredImgs =   this.props.imgsArr.filter(img => img.url === updatedUrl);
-     let updatedImgs =   this.props.imgsArr.filter(img => img.url !== updatedUrl);
-     console.log(filteredImgs,updatedImgs);
+    //  let updatedImgs =   this.props.imgsArr.filter(img => img.url !== updatedUrl);
+    //  console.log(filteredImgs,updatedImgs);
  
        
         const destImg = storage.refFromURL(`${filteredImgs[0].url}`);
@@ -101,12 +101,12 @@ class TextEditor extends React.Component {
             let imgIndex =  this.props.imgsArr.indexOf(updatedUrl)
               this.props.imgsArr.splice(imgIndex, 1)
                            
-              console.log(this.props.imgsArr);
-            console.log("File deleted successfully from storage");
+            //   console.log(this.props.imgsArr);
+            // console.log("File deleted successfully from storage");
           })
           .catch(error => {
             console.log(error);
-            console.log(this.props.imgsArr);
+            // console.log(this.props.imgsArr);
           });
     
      
@@ -129,14 +129,14 @@ class TextEditor extends React.Component {
 
     function update(delta, oldContents, source) {
       let range = quillRef.getSelection(true);
-      let contents = quillRef.getContents();
+      // let contents = quillRef.getContents();
 
-      console.log(range);
+      // console.log(range);
 
-      console.log("contents", contents);
+      // console.log("contents", contents);
 
-      console.log("change", delta);
-      console.log("oldContents", oldContents);
+      // console.log("change", delta);
+      // console.log("oldContents", oldContents);
     
    
         oldContents.ops.forEach(element => {
@@ -145,7 +145,7 @@ class TextEditor extends React.Component {
              if (range.index === elm.ind && elm.url === element.insert.image) {
               //Send found url
              updatedArr = elm.url;
-             console.log(updatedArr);
+            //  console.log(updatedArr);
              
              selfImg.updateImages(updatedArr);
       
@@ -159,7 +159,7 @@ class TextEditor extends React.Component {
         
       
 
-      console.log(selfImg.props.imgsArr);
+      // console.log(selfImg.props.imgsArr);
     }
 
     quillRef.on("text-change", update);
@@ -221,127 +221,3 @@ class TextEditor extends React.Component {
 }
 
 export default TextEditor;
-
-// const Texteditor = ({handleEditorChange,description}) =>{
-//    const [quillRef,setQuillRef] = useState(undefined)
-//    const [reactQuillRef,setReactQuillRef] = useState(undefined)
-
-//    const editor = ReactQuill.quill.getEditor();
-//    const unprivilegedEditor = ReactQuill.quill.makeUnprivilegedEditor(editor);
-//    // You may now use the unprivilegedEditor proxy methods
-
-//     const imageHandler = () =>{
-//         // const input = document.createElement('input');
-//         // input.setAttribute('type', 'file');
-//         // input.setAttribute('accept', 'image/*');
-//         // input.click();
-//         // input.onchange = async function() {
-//         //   const file = input.files[0];
-//         //   console.log('User trying to uplaod this:', file);
-//         //  }
-//         const input = document.createElement('input');
-
-//         input.setAttribute('type', 'file');
-//         input.setAttribute('accept', 'image/*');
-//         input.click();
-
-//         input.onchange = async () => {
-//           const file = input.files[0];
-//         //   const formData = new FormData();
-//            console.log(file);
-//            const uploadTask = storage
-//            .ref(`images/editor-${file.name}`)
-//            .put(file);
-//          // Firbase storage
-
-//          uploadTask.on(
-//            "state_changed",
-//            snapshot => {
-//              //progress
-//            },
-//            err => {
-//              console.log(err);
-//            },
-//            () => {
-//              console.log("completed");
-//              storage
-//                .ref("images")
-//                .child(`editor-${file.name}`)
-//                .getDownloadURL()
-//                .then(url => {
-//                  //Save the new image in DB
-//                  console.log("uploded to storage");
-
-//               // Insert uploaded image
-//               const range = unprivilegedEditor.getSelection();
-//               unprivilegedEditor.insertEmbed(range.index, 'image', url);
-
-//                });
-//            }
-//          );
-//         //   formData.append('image', file);
-
-//           // Save current cursor state
-//         //   const range = this.quill.getSelection(true);
-
-//         //   // Insert temporary loading placeholder image
-//         //   this.quill.insertEmbed(range.index, 'image', `${ window.location.origin }/images/loaders/placeholder.gif`);
-
-//         //   // Move cursor to right side of image (easier to continue typing)
-//         //   this.quill.setSelection(range.index + 1);
-
-//         //   // Remove placeholder image
-//         //   this.quill.deleteText(range.index, 1);
-
-//         }
-
-//         }
-
-//   const modules = {
-//         toolbar: [
-//           [{ 'header': [1, 2, false] }],
-//           [{ 'font': [] }],
-// 	      [{ 'size': ['small', false, 'large', 'huge'] }],
-//           ['bold', 'italic', 'underline','strike', 'blockquote'],
-//           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-//           ['link', 'image'],
-//           [{ 'align': [] }],
-//           [{ 'color': [] }, { 'background': [] }],
-//           [{ 'direction': 'rtl' }],
-//           ['clean']
-//         ],
-//         handlers: {
-//             image: this.imageHandler
-//        }
-
-//       }
-
-//      Quill.register({"modules/handlers": imageHandler});
-
-//      const formats = [
-//         'header',
-//         'font',
-//         'size',
-//         'bold', 'italic', 'underline', 'strike', 'blockquote',
-//         'list', 'bullet', 'indent',
-//         'link', 'image',
-//         'align',
-//         'color', 'background'
-//       ]
-
-//     return(
-//       <React.Fragment>
-//       <ReactQuill
-//         theme="snow"
-//         ref={(el) => {setReactQuillRef(el) }}
-//         modules={modules}
-//         formats={formats}
-//         value={description}
-//         onChange={handleEditorChange}
-//       />
-//       </React.Fragment>
-
-//     )
-// }
-
-// export default Texteditor

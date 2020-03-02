@@ -71,7 +71,7 @@ const ShowPost = props => {
 
   // Destory image
   const destroyImg = () => {
-    const postId = props.postId;
+    // const postId = props.postId;
 
     setLoadSpiner(true);
     setIsRemoved(true);
@@ -80,13 +80,11 @@ const ShowPost = props => {
       .delete()
       .then(() => {
         // File deleted successfully
-        console.log("Image deleted from storage");
+        // console.log("Image deleted from storage");
         setIsRemoved(true);
       })
       .catch(error => {
         //  an error occurred!
-        console.log(postId);
-
         console.log(error);
       });
   };
@@ -94,7 +92,7 @@ const ShowPost = props => {
     if (isRemoved) {
       destroyPostImge(user, postId)
         .then(() => {
-          console.log("removed from db");
+          // console.log("removed from db");
           setIsRemoved(false);
           showpost(user, postId);
           setLoadSpiner(false);
@@ -117,7 +115,7 @@ const ShowPost = props => {
         .delete()
         .then(() => {
           // File deleted successfully
-          console.log("File deleted successfully from storage");
+          // console.log("File deleted successfully from storage");
         })
         .catch(error => {
           console.log(error);
@@ -129,12 +127,27 @@ const ShowPost = props => {
         .delete()
         .then(() => {
           // File deleted successfully
-          console.log("File deleted successfully from storage");
+          // console.log("File deleted successfully from storage");
         })
         .catch(error => {
           console.log(error);
         });
-    }
+    }else if(post.description_imgs.length > 0){
+      for (let i = 0; i < post.description_imgs.length; i++) {
+        const destEditorImg = storage.refFromURL(`${post.description_imgs[i].url}`);
+        destEditorImg
+          .delete()
+          .then(() => {
+            // File deleted successfully
+            // console.log("File deleted successfully from storage");
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      }
+        
+      }
+    
   };
 
   //uploads images handler
@@ -196,7 +209,7 @@ const ShowPost = props => {
         console.log(err);
       },
       () => {
-        console.log("completed");
+        // console.log("completed");
         storage
           .ref("images")
           .child(postId + imgFile.name)
