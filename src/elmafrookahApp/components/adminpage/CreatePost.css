@@ -95,3 +95,54 @@ textarea {
   position: relative;
   top: 36px;
 }
+.ql-container .ql-editor{
+  direction: rtl;
+  text-align: right;
+  color: black;
+  font-size: 15px;
+}
+.ql-container.ql-snow {
+  height: 257px !important;
+  direction: rtl;
+  text-align: right;
+}
+.quill{
+  background-color: white;
+  height: 300px;
+}
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+
+  right: -15px !important;
+
+}
+.ql-toolbar.ql-snow {
+  border-top: none !important;
+}
+.img-btn{
+  margin: 7px 5px 0px 0px !important;
+  cursor: pointer;
+  border: 1px solid rgb(61, 127, 179);
+  color: rgb(61, 127, 179);
+  font-weight: bold;
+  width: fit-content;
+  padding: 0px 11px;
+  border-radius: 5px;
+ 
+}
+.img-btn:hover{
+  background-color: rgb(61, 127, 179);
+color: white;
+
+}
+.text-editor-cont{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 805px;
+  }
+  .add-img-container{
+    border-top: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+  background-color: #ffffff ; 
+  text-align: right;
+  }

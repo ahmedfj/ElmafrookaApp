@@ -21,8 +21,8 @@ const InterviewsPosts = props => {
         const interviewsPostsLong = res.data.post.filter(
           interviews => interviews.typeofpost === "مقابلات"
         );
-        setShortPost(interviewsPostsShort);
-        setLongPost(interviewsPostsLong);
+        setShortPost(interviewsPostsShort.reverse());
+        setLongPost(interviewsPostsLong.reverse());
       })
       .catch(err => console.log(err));
   }, []);
@@ -82,6 +82,7 @@ const InterviewsPosts = props => {
             setIsShortInterviews(true);
             setIsLongInterviews(false);
           }}
+          style={{margin:"15px"}}
           className="btn btn-primary btn-sm"
         >
           فيتشر
@@ -91,6 +92,7 @@ const InterviewsPosts = props => {
             setIsShortInterviews(false);
             setIsLongInterviews(true);
           }}
+          style={{margin:"15px"}}
           className="btn btn-primary btn-sm"
         >
           المقابلات

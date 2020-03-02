@@ -14,7 +14,7 @@ const ReviewsPosts = props => {
         const reviewsPosts = res.data.post.filter(
           interviews => interviews.typeofpost === "مراجعات"
         );
-        setPost(reviewsPosts);
+        setPost(reviewsPosts.reverse());
       })
       .catch(err => console.log(err));
   }, []);

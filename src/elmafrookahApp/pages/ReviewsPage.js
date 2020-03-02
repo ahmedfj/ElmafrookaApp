@@ -9,12 +9,12 @@ import PostCards from "../components/post-cards/PostCards";
 const ReviewsPage = props => {
   const [post, setPost] = useState([]);
   const [isLoading, setLoader] = useState(true);
-  const [showPost, setShowPost] = useState(16);
+  const [showPost, setShowPost] = useState(15);
   const [loadedPosts, setLoadedPosts] = useState(0)
 
   const handleLoad = () => {
 
-    setShowPost(showPost + 16)
+    setShowPost(showPost + 15)
     console.log(showPost);
 
   }
@@ -42,7 +42,7 @@ const ReviewsPage = props => {
       <hr />
       {isLoading ? <ScreenLoader /> : <PostCards post={post} />}
       <div style={{ width: "100%", textAlign: "center" }}>
-        {loadedPosts > 16 ? <button style={{ width: "180px", marginTop: "80px" }} className="btn btn-outline-primary btn-sm" onClick={handleLoad}>▼ المزيد</button>
+        {loadedPosts > 15 ? <button style={{ width: "180px", marginTop: "80px" }} className="btn btn-outline-primary btn-sm" onClick={handleLoad}>▼ المزيد</button>
           : ""}      </div>
     </div>
   );

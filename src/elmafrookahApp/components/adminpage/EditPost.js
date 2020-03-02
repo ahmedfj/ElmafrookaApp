@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import "./EditPost.css";
 import RichTextEditor from 'react-rte';
 import { SketchPicker } from 'react-color'
+import Texteditor from "./Texteditor";
 
 const EditPost = props => {
   const user = props.user;
@@ -14,25 +15,15 @@ const EditPost = props => {
     videolink: "",
     shortdescription: "",
     description: "",
-    description_color:"",
+    description_imgs:[],
     typeofpost: "",
     writername:"",
     rating:"",
     publishpost: false,
     isoncarousel: false
   });
-  const [colorPickerBg,setColorPickerBg] = useState(undefined)
-  const [choosenColor,setChoosenColor] = useState(undefined)
-  const[showColors,setShowColors] = useState(false)
-const handleChangeColor = (color) =>{
-setColorPickerBg(color)
-setChoosenColor(color.hex);
-formData.description_color = color.hex
 
-}
-
-  const [textValue,setTextValue] = useState(RichTextEditor.createValueFromString(formData.description,'html')) 
-
+  const [descriptionData,setDescriptionData] = useState('') 
   useEffect(() => {
     
     showPost(user, postId)
@@ -42,27 +33,22 @@ formData.description_color = color.hex
         setFormData({
           ...post
         });
-        setTextValue(RichTextEditor.createValueFromString(response.data.post.description,'html'))
-        setChoosenColor(response.data.post.description_color)
+        setDescriptionData(post.description)
+          console.log(post);
+          
       })
       .catch(error => console.log(error));
 
   }, []);
 
- const handleEditorChange = (value) =>{
-  value.toString('html')
-   setTextValue(value)
-   formData.description = textValue._cache.html  
-}
-const toolbarConfig = {
-  // Optionally specify the groups to display (displayed in the order listed).
-  display: ['INLINE_STYLE_BUTTONS', 'HISTORY_BUTTONS'],
-  INLINE_STYLE_BUTTONS: [
-    {label: 'Bold', style: 'BOLD', className: 'custom-css-class'},
-    {label: 'Italic', style: 'ITALIC'},
-    {label: 'Underline', style: 'UNDERLINE'}
-  ]
-};
+  
+  const handleEditorChange = (value) =>{
+
+   formData.description = value
+  console.log(formData.description);
+  
+   
+  }
 
 
 
@@ -178,25 +164,7 @@ const toolbarConfig = {
               />
             </div>
             <div className="input-cont">
-              <p onClick={() => setShowColors(!showColors)} className="color-btn">Color</p>
-              <label>الوصف</label>
-              <br />
-              <div style={{color:`${choosenColor}`}}>
-               <RichTextEditor
-                value={textValue}
-                onChange={handleEditorChange}
-                placeholder="الوصف"
-                toolbarConfig={toolbarConfig}
-              /> 
-              </div>
-              <div onMouseLeave={() => setShowColors(false)}>
-               {showColors ?<SketchPicker
-                   color={colorPickerBg}
-                   onChange={handleChangeColor}
-                   disableAlpha={true}
-                /> : "" } 
-              </div>
-         
+            <Texteditor imgsArr={formData.description_imgs} description={descriptionData} handleEditorChange={handleEditorChange}/>
             </div>
           </div>
           <hr />

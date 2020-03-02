@@ -131,7 +131,7 @@ const ShowPublicPost = ({ postId, name }) => {
         <span>
           {new Date(`${post.createdAt}`).toLocaleDateString("ar-MA", options)}
         </span>
-        <div style={{color:post.description_color,width: "100%"}}>
+        <div style={{width: "100%",direction:"rtl",textAlign:"justify"}}>
               {ReactHtmlParser(post.description)} 
              </div>
       </div>

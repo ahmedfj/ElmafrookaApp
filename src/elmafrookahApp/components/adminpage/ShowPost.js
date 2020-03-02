@@ -84,7 +84,7 @@ const ShowPost = props => {
         setIsRemoved(true);
       })
       .catch(error => {
-        // Uh-oh, an error occurred!
+        //  an error occurred!
         console.log(postId);
 
         console.log(error);
@@ -444,10 +444,8 @@ const ShowPost = props => {
         <p style={{ fontSize: "20px" }}>{post.shortdescription}</p>
         </div>
         <div className="long-description-cont">
-             <p>الوصف</p>
-             <div style={{color:post.description_color}}>
+             <p>الوصف</p> 
               {ReactHtmlParser(post.description)} 
-             </div>
         </div>
       </div>
       <div className="info-cont">

@@ -4,14 +4,15 @@ import { withRouter, Link } from "react-router-dom";
 import "./CreatePost.css";
 import RichTextEditor from 'react-rte';
 import { SketchPicker } from 'react-color'
+import Texteditor from "./Texteditor";
 
 const CreateNews = (props) => {
 
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    description_color:"",
     shortdescription: "",
+    description_imgs:[],
     publishpost: false,
     publishpostmainpage: false,
     typeofpost: "",
@@ -21,33 +22,17 @@ const CreateNews = (props) => {
     isoncarousel: false
   });
 
-  const [colorPickerBg,setColorPickerBg] = useState(undefined)
-  const [choosenColor,setChoosenColor] = useState(undefined)
-  const[showColors,setShowColors] = useState(false)
-const handleChangeColor = (color) =>{
-setColorPickerBg(color)
-setChoosenColor(color.hex);
-formData.description_color = color.hex
+  
 
-}
 
-const [textValue,setTextValue] = useState(RichTextEditor.createEmptyValue()) 
+const handleEditorChange = (value) =>{
 
- const handleEditorChange = (value) =>{
-   value.toString('html')
-   setTextValue(value)
-   formData.description = textValue._cache.html  
+
+formData.description = value
+console.log(formData.description);
  
-}
-const toolbarConfig = {
-  // Optionally specify the groups to display (displayed in the order listed).
-  display: ['INLINE_STYLE_BUTTONS', 'HISTORY_BUTTONS'],
-  INLINE_STYLE_BUTTONS: [
-    {label: 'Bold', style: 'BOLD', className: 'custom-css-class'},
-    {label: 'Italic', style: 'ITALIC'},
-    {label: 'Underline', style: 'UNDERLINE'}
-  ]
 };
+
   const handleChange = event => {
     //get the name of input
     const name = event.target.name;
@@ -197,23 +182,9 @@ const toolbarConfig = {
             />
           </div>
 
-          <div className="input-cont">
-            <p onClick={() => setShowColors(!showColors)} className="color-btn-create">Color</p>
-            <div style={{color:`${choosenColor}`}}>
-            <RichTextEditor
-        value={textValue}
-        onChange={handleEditorChange}
-        placeholder="الوصف"
-        toolbarConfig={toolbarConfig}
-      />
-      </div>
-      <div onMouseLeave={() => setShowColors(false)}>
-               {showColors ?<SketchPicker
-                   color={colorPickerBg}
-                   onChange={handleChangeColor}
-                   disableAlpha={true}
-                /> : "" } 
-              </div>
+          <div  className="input-cont">
+      <Texteditor imgsArr={formData.description_imgs} description={formData.description} handleEditorChange={handleEditorChange}/>
+
           </div>
         </div>
         <button type="submit" className="btn btn-primary crBtn">

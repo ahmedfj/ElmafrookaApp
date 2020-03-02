@@ -15,7 +15,7 @@ const NewsPosts = props => {
         const profilePosts = res.data.post.filter(
           profiles => profiles.typeofpost === "بروفايل"
         );
-        return showIndex ? setPosts(profilePosts) : null;
+        return showIndex ? setPosts(profilePosts.reverse()) : null;
       })
       .catch(err => (showIndex ? console.log(err) : null));
     return () => (showIndex = false);

@@ -87,3 +87,30 @@ border: none;
 textarea{
   text-align: justify;
  }
+ .ql-container .ql-editor{
+  direction: rtl;
+  text-align: right;
+  color: black;
+  font-size: 15px;
+}
+.ql-container.ql-snow {
+  height: 257px !important;
+  direction: rtl;
+  text-align: right;
+}
+.quill{
+  background-color: white;
+  height: 300px;
+}
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+
+  right: -15px !important;
+
+}
+
+.add-img-container{
+  background-color: #ffffff ; 
+  padding: 2px;
+  }
+
+ 
